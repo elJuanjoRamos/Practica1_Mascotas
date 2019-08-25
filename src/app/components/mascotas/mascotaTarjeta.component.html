@@ -1,0 +1,47 @@
+<div class="card animated fadeIn fast">
+    <img class="card-img-top rounded mx-auto d-block" src={{mascota.img}} [alt]="mascota.name">
+    <div class="card-body">
+        <h5 class="card-title">Name: {{mascota.name}}</h5>
+        <hr>
+        <table border="0">
+            <tr>
+                <th width="70%">Type</th>
+                <td>
+                    <p class="card-text">{{mascota.type}}</p>
+                </td>
+            </tr>
+            <tr>
+                <th width="70%">Health</th>
+                <td>
+                    <p class="card-text">{{mascota.health}}%</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Happiness</th>
+                <td>
+                    <p class="card-text">{{mascota.happiness}}%</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Hygiene</th>
+                <td>
+                    <p class="card-text">{{mascota.hygiene}}%</p>
+                </td>
+            </tr>
+
+        </table>
+        <br>
+        <button type="button" class="btn btn-outline-primary btn-block">
+             Feed
+        </button>
+        <button type="button" class="btn btn-outline-danger btn-block">
+                Bath
+        </button>
+        <button type="button" class="btn btn-outline-success btn-block">
+                Play
+           </button>
+        <!--<a class="btn btn-outline-primary" [routerLink]="['/heroe',i]">
+            Ver más link...
+        </a>-->
+    </div>
+</div>
