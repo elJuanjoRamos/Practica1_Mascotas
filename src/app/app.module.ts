@@ -12,6 +12,8 @@ import { NavbarComponent } from './components/navba/navbar.component';
 //servicios
 import { UserService } from './components/services/user.service';
 import { PetService } from './components/services/mascota.service';
+import { Ayuda } from './components/services/auxiliar';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { PetService } from './components/services/mascota.service';
   ],
   providers: [
     UserService,
-    PetService
+    PetService,
+    Ayuda
   ],
   bootstrap: [AppComponent]
 })

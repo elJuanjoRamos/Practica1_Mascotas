@@ -5,9 +5,9 @@ import { MascotasComponent } from './components/mascotas/mascotas.component';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login/:id', component: LoginComponent },
   { path: 'dashboard/user/:id', component: MascotasComponent },
-  {path: '**', pathMatch: 'full', redirectTo: 'login'}
+  {path: '**', pathMatch: 'full', redirectTo: 'login/access'}
 ];
 
 @NgModule({

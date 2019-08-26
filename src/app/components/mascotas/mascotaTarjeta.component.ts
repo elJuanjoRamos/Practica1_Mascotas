@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PetService, Pet } from '../services/mascota.service';
 
 
 @Component({
@@ -7,13 +8,21 @@ import { Router } from '@angular/router';
   templateUrl: './mascotaTarjeta.component.html'
 })
 export class MascotaTarjetaComponent implements OnInit {
-  @Input() mascota: any = { } ;
-  @Output() mascotaSeleccionado: EventEmitter<number>;
+  @Input() mascota: Pet;
+  user:string;
 
-  constructor(private router: Router ) {
-    this.mascotaSeleccionado = new EventEmitter();
-   }
+  constructor( private service: PetService, private activatedRoute: ActivatedRoute ) {
+    this.activatedRoute.params.subscribe( params => {
+      this.user = params['id'];
+    });
+  }
 
   ngOnInit() {
   }
+
+
+  updatePet( id: number, stat: string) {
+    this.service.updatePet( this.user, id, stat  );
+  }
+
 }

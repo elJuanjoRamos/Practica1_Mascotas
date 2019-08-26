@@ -1,15 +1,26 @@
 <app-navbar></app-navbar>
 <br>
+<br>
+<br>
 <div class="container">
-    <h1 *ngIf="validar">
-        My <small>Pets</small>
-    </h1>
+    <div class="row">
+        <div class="col-md-10">
+            <h1>
+                My <small>Pets</small>
+            </h1>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        New Pet
+                      </button>
+        </div>
+    </div>
     <hr>
     <div>
         <div *ngIf="!validar" class="row">
             <div class="col-md-12">
                 <div class="alert alert-danger" role="alert">
-                    No se han encontrado mascotas para ti.
+                    No pets found for you.
                 </div>
             </div>
         </div>
@@ -17,9 +28,6 @@
 
     </div>
     <div class="container">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                        New Pet
-                      </button>
         <br>
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

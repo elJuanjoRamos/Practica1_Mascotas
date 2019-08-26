@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-        <img src="assets/img/A-64.png" width="30" height="30" alt="">
+        <img src="assets/img/icon2.png" width="30" height="30" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,11 +9,11 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['login']">Login <span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['login/access']">Login <span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 ">
-            <input class="form-control mr-sm-2 " #buscarTexto (keyUp.enter)="buscarHeroe(buscarTexto.value)" type="search " placeholder="Buscar Mascota ">
+            <input class="form-control mr-sm-2 " #buscarTexto (keyUp.enter)="buscarHeroe(buscarTexto.value)" type="search " placeholder="Search Pet ">
             <button class="btn btn-outline-danger my-2 my-sm-0 " (click)="buscarHeroe(buscarTexto.value)" type="button ">Buscar</button>
         </form>
     </div>
