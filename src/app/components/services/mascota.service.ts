@@ -73,9 +73,9 @@ export class PetService {
                 console.log("esta entrando");
                 if ( e.pets.type === "Dog") {
 
-                    if ( e.pets.happiness !== 0  ) { e.pets.happiness = e.pets.happiness - 5; }
-                    if ( e.pets.health !== 0 ) {  e.pets.health = e.pets.health - 5; }
-                    if ( e.pets.hygiene !== 0 ) { e.pets.hygiene = e.pets.hygiene - 5; }
+                    if ( e.pets.happiness !== 0  ) { e.pets.happiness = e.pets.happiness - 1; }
+                    if ( e.pets.health !== 0 ) {  e.pets.health = e.pets.health - 1; }
+                    if ( e.pets.hygiene !== 0 ) { e.pets.hygiene = e.pets.hygiene - 1; }
                     //metodo para cambiar la imagen 
                     if ( e.pets.health <= 60 && e.pets.hygiene <= 60 && e.pets.happiness <= 60  ) {
                         e.pets.img ="assets/img/perro3.jpg";
@@ -96,15 +96,15 @@ export class PetService {
                 if( e.pets.type === "Cat") {
 
                     if ( e.pets.health !== 0 ) {
-                        e.pets.health = e.pets.health - 5;
+                        e.pets.health = e.pets.health - 1;
                         if ( e.pets.health < 0 ) { e.pets.health = 0;}
                     }
                     if ( e.pets.happiness !== 0  ) { 
-                        e.pets.happiness = e.pets.happiness - 5;
+                        e.pets.happiness = e.pets.happiness - 1;
                         if ( e.pets.happiness < 0 ) { e.pets.happiness = 0;}
                     }
                     if ( e.pets.hygiene !== 0 ) {
-                        e.pets.hygiene = e.pets.hygiene - 5;
+                        e.pets.hygiene = e.pets.hygiene - 1;
                         if ( e.pets.hygiene < 0 ) { e.pets.hygiene = 0;}
                     }
                     //metodo para cambiar la imagen 
@@ -129,15 +129,15 @@ export class PetService {
             if (e.user === user ) {
                 if( e.pets.type === "Bird") {
                     if ( e.pets.happiness !== 0  ) { 
-                        e.pets.happiness = e.pets.happiness - 5;
+                        e.pets.happiness = e.pets.happiness - 1;
                         if ( e.pets.happiness < 0 ) { e.pets.happiness = 0;}
                     }
                     if ( e.pets.health !== 0 ) {
-                        e.pets.health = e.pets.health - 5;
+                        e.pets.health = e.pets.health - 1;
                         if ( e.pets.health < 0 ) { e.pets.health = 0;}
                      }
                     if ( e.pets.hygiene !== 0 ) {
-                        e.pets.hygiene = e.pets.hygiene - 5;
+                        e.pets.hygiene = e.pets.hygiene - 1;
                         if ( e.pets.hygiene < 0 ) { e.pets.hygiene = 0;}
                     }
                     //metodo para cambiar la imagen 

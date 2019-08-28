@@ -13,14 +13,20 @@ export class MascotasComponent implements OnInit {
   mascotas: Pet[] = [];
   validar:boolean = true;
   user: string;
-
+  hora:number = Date.now();
+  cant:number = 0;
   constructor(private mascotasService: PetService, private activatedRoute: ActivatedRoute, private ayuda: Ayuda) {
     this.validar = false;
+    
+    setInterval(() => {this.hora = Date.now()}, 1);
+
+    
     this.activatedRoute.params.subscribe( params => {
       this.user = params['id'];
       ayuda.cearUsuario();
       ayuda.setUsuario(this.user);
       this.mascotas = this.mascotasService.getMascotas( ayuda.getUsuario() );
+      this.cant = this.mascotas.length;
     });
     if (this.mascotas.length > 0) {
       this.validar = true;
@@ -48,13 +54,14 @@ export class MascotasComponent implements OnInit {
         this.mascotasService.discountCat(this.ayuda.getUsuario());
         this.mascotasService.discountBird(this.ayuda.getUsuario());
         this.timeout();
-    }, 6000);
+    }, 5000);
 }
 
 //actuaizar lista
   updatePetsList(name: string) {
     this.activatedRoute.params.subscribe( params => {
       this.mascotas = this.mascotasService.getMascotas( name );
+      this.cant = this.mascotas.length;
     });
     this.validar = true;
   }

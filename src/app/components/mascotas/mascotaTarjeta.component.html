@@ -1,52 +1,33 @@
-<div class="card animated fadeIn fast">
-    <div *ngIf=" mascota.health > 0 && mascota.happiness > 0 && mascota.hygiene > 0 ">
-        <img class="card-img-top rounded mx-auto d-block" src={{mascota.img}} [alt]="mascota.name">
-        <div class="card-body">
-            <h5 class="card-title">Name: {{mascota.name}}</h5>
-            <hr>
-            <table border="0">
-                <tr>
-                    <th width="70%">Type</th>
-                    <td>
-                        <p class="card-text">{{mascota.type}}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th width="70%">Health</th>
-                    <td>
-                        <p class="card-text">{{mascota.health}}%</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Happiness</th>
-                    <td>
-                        <p class="card-text">{{mascota.happiness}}%</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Hygiene</th>
-                    <td>
-                        <p class="card-text">{{mascota.hygiene}}%</p>
-                    </td>
-                </tr>
-
-            </table>
-            <br>
-            <button type="button" (click)="updatePet( mascota.id, 'health')" class="btn btn-outline-primary btn-block">
-             Feed
-        </button>
-            <button type="button" (click)="updatePet( mascota.id, 'hygiene')" class="btn btn-outline-danger btn-block">
-                Bath
-        </button>
-            <button type="button" (click)="updatePet( mascota.id, 'happiness')" class="btn btn-outline-success btn-block">
-                Play
-           </button>
+<div class="client card" *ngIf=" mascota.health > 0 && mascota.happiness > 0 && mascota.hygiene > 0 ">
+    <div class="card-body text-center">
+        <div class="client-avatar"><img src="{{mascota.img}}" [alt]="mascota.name" class="img-fluid rounded-circle">
+            <div class="status bg-green"></div>
+        </div>
+        <div class="client-title">
+            <h3>Name: {{mascota.name}}</h3><span>{{mascota.type}}</span>
+        </div>
+        <div class="client-info">
+            <div class="row">
+                <div class="col-4"><strong>{{mascota.health}}</strong><br><small>Health</small></div>
+                <div class="col-4"><strong>{{mascota.happiness}}</strong><br><small>Happiness</small></div>
+                <div class="col-4"><strong>{{mascota.hygiene}}</strong><br><small>Hygiene</small></div>
+            </div>
+        </div>
+        <div class="client-title">
+            <a (click)="updatePet( mascota.id, 'health')">Feed</a>
+            <a (click)="updatePet( mascota.id, 'happiness')">Play</a>
+            <a (click)="updatePet( mascota.id, 'hygiene')">Bath</a>
         </div>
     </div>
-    <div *ngIf=" mascota.health == 0 && mascota.happiness == 0 && mascota.hygiene == 0 ">
-        <img src="assets/img/pata.png" class="card-img-top rounded mx-auto d-block">
-        <div class="card-body">
-            <hr>
+</div>
+
+<div class="client card" *ngIf=" mascota.health == 0 && mascota.happiness == 0 && mascota.hygiene == 0 ">
+    <div class="card-body text-center">
+        <div class="client-avatar"><img src="assets/img/pata.png" class="img-fluid rounded-circle">
+            <div class="status bg-green"></div>
+        </div>
+
+        <div class="client-info">
             <div class="row">
                 <div class="col-md-12">
                     <div class="alert alert-danger" role="alert">
@@ -54,7 +35,9 @@
                     </div>
                 </div>
             </div>
-            <br> You must be more attentive with your pets.
+        </div>
+        <div class="client-title">
+            You must be more attentive with your pets.
         </div>
     </div>
 </div>
